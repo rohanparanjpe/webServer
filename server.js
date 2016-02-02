@@ -12,19 +12,7 @@ app.get('/',function(req,res){    // get request and response
   * Middleware
 */
 //object middleware
- var middleware = {
-   requireAuthentication: function(req,res,next) {
-     console.log('Private route hit!!');
-       next();
-   },
-     
-  logger:function(req,res,next){
-      var date=new Date().toString();
-    console.log(req.method+ 'date'+ date);
-      next();
-  }
-     
- };
+ var middleware = require('./middleware.js')
 
 app.use(middleware.logger);
 app.use(middleware.requireAuthentication); // authenticate before route
