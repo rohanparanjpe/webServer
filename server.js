@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 3000;
 /*
 app.get('/',function(req,res){    // get request and response
     
@@ -23,7 +24,7 @@ app.get('/about',function(req,res){
 
 app.use(express.static(__dirname +'/public')); //express static is used to expose a folder say "public" to our site __dirname gets u to current directory
 
-app.listen(3000,function(){
+app.listen( PORT,function(){
     
  console.log('express server started');   
 });
